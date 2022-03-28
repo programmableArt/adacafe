@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "common-ui": "libs/common-ui",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e"
   }

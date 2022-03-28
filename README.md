@@ -1,5 +1,3 @@
-
-
 # Adacafe
 
 This project was generated using [Nx](https://nx.dev).
@@ -28,6 +26,8 @@ Below are our core plugins:
   - `npm install --save-dev @nrwl/express`
 - [Node](https://nodejs.org)
   - `npm install --save-dev @nrwl/node`
+- [Storybook](https://storybook.js.org/)
+  - `npm run storybook:common-ui`
 
 There are also many [community plugins](https://nx.dev/community) you could add.
 
@@ -78,8 +78,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
