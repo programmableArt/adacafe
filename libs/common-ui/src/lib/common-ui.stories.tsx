@@ -9,4 +9,5 @@ export default {
 const Template: Story<CommonUiProps> = (args) => <CommonUi {...args} />;
 
 export const Primary = Template.bind({});
+export const Secodary = Template.bind({});
 Primary.args = {};

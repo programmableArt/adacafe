@@ -13,6 +13,7 @@
     "@emotion/react": "^11.8.2",
     "@emotion/server": "11.4.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.2",
     "@nrwl/next": "13.9.5",
     "core-js": "^3.6.5",
@@ -69,4 +70,3 @@
     "url-loader": "^3.0.0"
   }
 }
-
