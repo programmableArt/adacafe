@@ -1,18 +1,16 @@
+import { ProjectCard } from '@adacafe/common-ui';
 import styled from '@emotion/styled';
 import {
   Box,
   AppBar,
   Toolbar,
-  IconButton,
   Typography,
   Button,
-  Stack,
-  Card,
-  CardActions,
-  CardContent,
   Grid,
+  Stack,
+  Paper,
+  TextField,
 } from '@mui/material';
-import { Menu } from '@mui/icons-material';
 
 const StyledPage = styled.div`
   .page {
@@ -34,41 +32,79 @@ export function Index() {
           </Toolbar>
         </AppBar>
       </Box>
-
-      <Grid
-        container
-        spacing={3}
+      <Box
         sx={{
+          minHeight: '300px',
           padding: 5,
         }}
       >
-        <Grid item xs={10}>
-          <Box
-            sx={{
-              borderWidth: '3px',
-              borderStyle: 'dotted',
-              borderColor: 'primary.main',
-              minHeight: '300px',
-              padding: 5,
-            }}
-          >
-            Groups and sorting/filtering
-          </Box>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Paper
+              sx={{
+                padding: 2,
+              }}
+            >
+              <Stack
+                direction={'row'}
+                spacing={1}
+                justifyContent={'space-between'}
+                flexWrap={'wrap'}
+              >
+                <Stack
+                  direction={'row'}
+                  spacing={1}
+                  justifyContent={'start'}
+                  alignItems={'center'}
+                  flexWrap={'wrap'}
+                >
+                  <Typography variant="body1">Sort By: </Typography>
+                  <Button variant="outlined">Trusted</Button>
+                  <Button variant="outlined">Rug Pull</Button>
+                  <Button variant="outlined">ABC</Button>
+                </Stack>
+                <TextField id="search" label="Search" variant="outlined" />
+              </Stack>
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <ProjectCard
+              cardTitle="ADA Cafe"
+              cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={2}>
-          <Box
-            sx={{
-              borderWidth: '3px',
-              borderStyle: 'dotted',
-              borderColor: 'primary.main',
-              minHeight: '300px',
-              padding: 5,
-            }}
-          >
-            Updoots / endoursements / rug pull rating
-          </Box>
-        </Grid>
-      </Grid>
+      </Box>
     </StyledPage>
   );
 }

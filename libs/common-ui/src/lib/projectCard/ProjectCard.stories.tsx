@@ -9,4 +9,8 @@ export default {
 const Template: Story<ProjectCardProps> = (args) => <ProjectCard {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  cardTitle: 'ADA Cafe',
+  cardInfo:
+    'Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals.',
+};
