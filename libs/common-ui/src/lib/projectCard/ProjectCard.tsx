@@ -35,6 +35,7 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
         flexDirection: 'column',
         justifyContent: 'space-between',
         maxWidth: '350px',
+        minWidth: '250px',
       }}
     >
       <CardMedia

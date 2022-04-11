@@ -67,37 +67,37 @@ export function Index() {
               </Stack>
             </Paper>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
