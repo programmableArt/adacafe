@@ -10,6 +10,7 @@ import {
   Stack,
   Paper,
   TextField,
+  Chip,
 } from '@mui/material';
 
 const StyledPage = styled.div`
@@ -43,61 +44,73 @@ export function Index() {
             <Paper
               sx={{
                 padding: 2,
+                minWidth: '250px',
               }}
             >
-              <Stack
-                direction={'row'}
-                spacing={1}
-                justifyContent={'space-between'}
-                flexWrap={'wrap'}
-              >
-                <Stack
-                  direction={'row'}
-                  spacing={1}
-                  justifyContent={'start'}
-                  alignItems={'center'}
-                  flexWrap={'wrap'}
-                >
-                  <Typography variant="body1">Sort By: </Typography>
-                  <Button variant="outlined">Trusted</Button>
-                  <Button variant="outlined">Rug Pull</Button>
-                  <Button variant="outlined">ABC</Button>
-                </Stack>
-                <TextField id="search" label="Search" variant="outlined" />
-              </Stack>
+              <Grid container spacing={2}>
+                <Grid item sm={8}>
+                  <Stack
+                    direction={'row'}
+                    spacing={1}
+                    justifyContent={'start'}
+                    alignItems={'center'}
+                    flexWrap={'wrap'}
+                    height={'100%'}
+                  >
+                    <Typography variant="body1">Sort By: </Typography>
+                    <Stack direction={'row'} spacing={1}>
+                      <Chip
+                        label="Trusted"
+                        variant="filled"
+                        color="primary"
+                        clickable={true}
+                      />
+                      <Chip
+                        label="Rug Pull"
+                        variant="outlined"
+                        clickable={true}
+                      />
+                      <Chip label="abc" variant="outlined" clickable={true} />
+                    </Stack>
+                  </Stack>
+                </Grid>
+                <Grid item sm={4}>
+                  <TextField id="search" label="Search" variant="outlined" />
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."
             />
           </Grid>
-          <Grid item sm={6} md={4}>
+          <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard
               cardTitle="ADA Cafe"
               cardInfo="Ada cafe is a hub of networking and cooperation that works towards empowering its community to accomplish their goals."

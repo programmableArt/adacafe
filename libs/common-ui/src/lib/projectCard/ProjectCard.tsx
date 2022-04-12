@@ -25,7 +25,7 @@ export interface ProjectCardProps {
   cardInfo: string;
 }
 
-const iconSize = '30px';
+const iconSize = '25px';
 
 export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
   return (
@@ -34,7 +34,7 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        maxWidth: '350px',
+        maxWidth: '300px',
         minWidth: '250px',
       }}
     >
@@ -44,6 +44,7 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
         alt="Groups Icon"
         sx={{
           height: '200px',
+          objectFit: 'contain',
         }}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -66,6 +67,10 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
                 sx={{
                   width: iconSize,
                   height: iconSize,
+                  [theme.breakpoints.up('sm')]: {
+                    width: '30px',
+                    height: '30px',
+                  },
                   color: 'primary.main',
                 }}
               />
@@ -75,6 +80,10 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
                 sx={{
                   width: iconSize,
                   height: iconSize,
+                  [theme.breakpoints.up('sm')]: {
+                    width: '30px',
+                    height: '30px',
+                  },
                   color: 'primary.main',
                 }}
               />
@@ -84,6 +93,10 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
                 sx={{
                   width: iconSize,
                   height: iconSize,
+                  [theme.breakpoints.up('sm')]: {
+                    width: '30px',
+                    height: '30px',
+                  },
                   color: 'primary.main',
                 }}
               />
@@ -94,6 +107,10 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
                   width: iconSize,
                   height: iconSize,
                   color: 'primary.main',
+                  [theme.breakpoints.up('sm')]: {
+                    width: '30px',
+                    height: '30px',
+                  },
                 }}
               />
             </IconButton>
