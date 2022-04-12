@@ -7,7 +7,7 @@ export function Index() {
       <Box
         sx={{
           minHeight: '300px',
-          padding: 5,
+          padding: 3,
         }}
       >
         <Grid container spacing={2}>
