@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-enum HttpMethods {
+export enum HttpMethods {
   Get = 'GET',
   Post = 'POST',
 }
@@ -47,8 +47,8 @@ export const useHttp = () => {
         const data = await response.json();
 
         reponseCallback(data);
-      } catch (errorResponse) {
-        setError(errorResponse.message || 'Something Went Wrong!');
+      } catch (errorResponse: any) {
+        setError(errorResponse?.message || 'Something Went Wrong!');
       }
 
       setIsLoading(false);

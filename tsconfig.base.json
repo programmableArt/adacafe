@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@adacafe/common-ui": ["libs/common-ui/src/index.ts"]
+      "@adacafe/common-ui": ["libs/common-ui/src/index.ts"],
+      "@adacafe/hooks": ["libs/hooks/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

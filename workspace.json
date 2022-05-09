@@ -3,6 +3,7 @@
   "projects": {
     "common-ui": "libs/common-ui",
     "frontend": "apps/frontend",
-    "frontend-e2e": "apps/frontend-e2e"
+    "frontend-e2e": "apps/frontend-e2e",
+    "hooks": "libs/hooks"
   }
 }
