@@ -1,9 +1,12 @@
 import { Layout, ProjectCard, SearchAndSort } from '@adacafe/common-ui';
-import { Box, Grid } from '@mui/material';
+import { Box, Button, Grid, Paper, Stack } from '@mui/material';
+import { useState } from 'react';
 
 export function Index() {
+  const [connected, setConnected] = useState(false);
+
   return (
-    <Layout>
+    <Layout connected={connected} connectCallback={setConnected}>
       <Box
         sx={{
           minHeight: '300px',
@@ -12,10 +15,18 @@ export function Index() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <SearchAndSort
-              filterByCallback={(filterBy) => console.log('filterBy', filterBy)}
-              sortCallback={(sortBy) => console.log('sortBy', sortBy)}
-            />
+            <Paper>
+              {connected.toString()}
+              <SearchAndSort
+                filterByCallback={(filterBy) =>
+                  console.log('filterBy', filterBy)
+                }
+                sortCallback={(sortBy) => console.log('sortBy', sortBy)}
+                searchByCallback={(searchBy) =>
+                  console.log('searchBy', searchBy)
+                }
+              />
+            </Paper>
           </Grid>
           <Grid item sm={6} md={4} lg={'auto'}>
             <ProjectCard

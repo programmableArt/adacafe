@@ -1,109 +1,123 @@
 import {
-  Paper,
   Grid,
   TextField,
   Stack,
-  Typography,
-  Chip,
   debounce,
-  useMediaQuery,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
+  Box,
+  Divider,
 } from '@mui/material';
 import { ChangeEvent, useEffect, useState } from 'react';
-import { theme } from '../theme';
 
 export type SearchAndSortProps = {
-  filterByCallback: (filterBy: string) => void;
+  searchByCallback: (searchBy: string) => void;
+  filterByCallback: (filterBy: number) => void;
   sortCallback: (sort: SortBy) => void;
 };
 
 export enum SortBy {
   Trusted = 'tusted',
-  RugPull = 'rug pull',
-  Alphabetical = 'alphabetical',
+  Name = 'name',
+}
+export enum FilterBy {
+  NoFilter,
+  Youtube,
+  NFT,
+  Services,
 }
 
 export function SearchAndSort({
-  filterByCallback,
+  searchByCallback,
   sortCallback,
+  filterByCallback,
 }: SearchAndSortProps) {
-  const [filterBy, setFilterBy] = useState('');
-  const [sortBy, setSortBy] = useState(SortBy.Trusted);
-  const smallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const [searchBy, setSearchBy] = useState('');
+  const [filterBy, setFilterBy] = useState<FilterBy>(FilterBy.NoFilter);
+  const [sortBy, setSortBy] = useState<SortBy>(SortBy.Trusted);
 
   useEffect(() => {
-    filterByCallback(filterBy);
-  }, [filterBy, filterByCallback]);
+    searchByCallback(searchBy);
+  }, [searchBy, searchByCallback]);
 
   useEffect(() => {
     sortCallback(sortBy);
   }, [sortBy, sortCallback]);
 
-  const updateFilterHandler = (event: ChangeEvent<HTMLInputElement>) =>
-    setFilterBy(event.target.value);
+  useEffect(() => {
+    filterByCallback(filterBy);
+  }, [filterBy, filterByCallback]);
 
-  const updateFilterHandlerDebounceWrapper = debounce(updateFilterHandler, 300);
+  const updateSearchHandler = (event: ChangeEvent<HTMLInputElement>) =>
+    setSearchBy(event.target.value);
+
+  const updateSearchHandlerDebounceWrapper = debounce(updateSearchHandler, 300);
 
   return (
-    <Paper
+    <Box
       sx={{
         padding: 2,
         minWidth: '250px',
       }}
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent={'end'}>
         <Grid item xs={'auto'}>
           <TextField
             id="search"
             label="Search"
             variant="outlined"
-            onChange={updateFilterHandlerDebounceWrapper}
+            onChange={updateSearchHandlerDebounceWrapper}
           />
         </Grid>
         <Grid item xs={'auto'}>
-          {!smallScreen && (
-            <Stack
-              direction={'row'}
-              spacing={1}
-              justifyContent={'start'}
-              alignItems={'center'}
-              flexWrap={'wrap'}
-              height={'100%'}
+          <Stack direction={'row'} spacing={2}>
+            <FormControl
+              variant="standard"
+              sx={{
+                width: '100px',
+              }}
             >
-              <Typography variant="body1">Sort By: </Typography>
-              <Stack direction={'row'} spacing={1}>
-                <Chip
-                  label="Trusted"
-                  variant={sortBy === SortBy.Trusted ? 'filled' : 'outlined'}
-                  color={sortBy === SortBy.Trusted ? 'primary' : 'default'}
-                  clickable={true}
-                  onClick={() => setSortBy(SortBy.Trusted)}
-                />
-                <Chip
-                  label="Rug Pull"
-                  variant={sortBy === SortBy.RugPull ? 'filled' : 'outlined'}
-                  color={sortBy === SortBy.RugPull ? 'primary' : 'default'}
-                  clickable={true}
-                  onClick={() => setSortBy(SortBy.RugPull)}
-                />
-                <Chip
-                  label="abc"
-                  variant={
-                    sortBy === SortBy.Alphabetical ? 'filled' : 'outlined'
+              <InputLabel id="filter-by-label">Filter By</InputLabel>
+              <Select
+                labelId="filter-by-label"
+                id="filter-by-select"
+                label="Filter By"
+                value={filterBy}
+                onChange={(event: SelectChangeEvent<FilterBy>) => {
+                  switch (event.target.value) {
+                    case FilterBy.NoFilter:
+                      setFilterBy(FilterBy.NoFilter);
+                      break;
+                    case FilterBy.NFT:
+                      setFilterBy(FilterBy.NFT);
+                      break;
+                    case FilterBy.Services:
+                      setFilterBy(FilterBy.Services);
+                      break;
+                    case FilterBy.Youtube:
+                      setFilterBy(FilterBy.Youtube);
+                      break;
+                    default:
+                      return;
                   }
-                  color={sortBy === SortBy.Alphabetical ? 'primary' : 'default'}
-                  clickable={true}
-                  onClick={() => setSortBy(SortBy.Alphabetical)}
-                />
-              </Stack>
-            </Stack>
-          )}
-          {smallScreen && (
-            <FormControl fullWidth>
+                }}
+              >
+                <MenuItem value={FilterBy.NoFilter}>No Filter</MenuItem>
+                <MenuItem value={FilterBy.NFT}>NFT</MenuItem>
+                <MenuItem value={FilterBy.Services}>Services</MenuItem>
+                <MenuItem value={FilterBy.Youtube}>Youtube</MenuItem>
+              </Select>
+            </FormControl>
+            <Divider orientation="vertical" flexItem />
+            <FormControl
+              variant="standard"
+              sx={{
+                width: '100px',
+              }}
+            >
               <InputLabel id="sort-by-label">Sort By</InputLabel>
               <Select
                 labelId="sort-by-label"
@@ -115,11 +129,8 @@ export function SearchAndSort({
                     case SortBy.Trusted:
                       setSortBy(SortBy.Trusted);
                       break;
-                    case SortBy.RugPull:
-                      setSortBy(SortBy.RugPull);
-                      break;
-                    case SortBy.Alphabetical:
-                      setSortBy(SortBy.Alphabetical);
+                    case SortBy.Name:
+                      setSortBy(SortBy.Name);
                       break;
                     default:
                       return;
@@ -127,14 +138,13 @@ export function SearchAndSort({
                 }}
               >
                 <MenuItem value={SortBy.Trusted}>Trusted</MenuItem>
-                <MenuItem value={SortBy.RugPull}>Rug Pull</MenuItem>
-                <MenuItem value={SortBy.Alphabetical}>abc</MenuItem>
+                <MenuItem value={SortBy.Name}>Name</MenuItem>
               </Select>
             </FormControl>
-          )}
+          </Stack>
         </Grid>
       </Grid>
-    </Paper>
+    </Box>
   );
 }
 

@@ -1,9 +1,7 @@
-import styled from '@emotion/styled';
 import {
   Card,
   CardContent,
   Typography,
-  CardActions,
   Button,
   CardMedia,
   Box,
@@ -133,6 +131,30 @@ export function ProjectCard({ cardTitle, cardInfo }: ProjectCardProps) {
               variant="outlined"
             />
           </Stack>
+        </Stack>
+        <Stack direction={'row'} width={'100%'}>
+          <Button
+            sx={{
+              width: 'auto',
+            }}
+          >
+            Endorse
+          </Button>
+          <Box
+            sx={{
+              width: '80px',
+              alignContent: 'center',
+              backgroundColor: 'primary.light',
+              border: '1px dotted black',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant="h5" color={'common.white'}>
+              14
+            </Typography>
+          </Box>
         </Stack>
       </Box>
     </Card>
