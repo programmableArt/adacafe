@@ -1,7 +1,6 @@
 import { Layout, ProjectCard, SearchAndSort } from '@adacafe/common-ui';
-import { HttpMethods, useHttp } from '@adacafe/hooks';
-import { Alert, Box, Grid, Paper } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { Box, Grid, Paper } from '@mui/material';
+import { useState } from 'react';
 
 export function Index() {
   const [connected, setConnected] = useState(false);

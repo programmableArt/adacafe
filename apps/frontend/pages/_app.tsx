@@ -7,7 +7,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to frontend!</title>
+        <title>Ada Cafe</title>
       </Head>
       <main className="app">
         <ThemeProvider theme={theme}>
